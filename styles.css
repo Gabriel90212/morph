@@ -1,0 +1,133 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body
+{
+    min-height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: black;
+
+}
+h1
+{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 350px;
+    height: 100px;
+    background-image: 
+    linear-gradient(45deg, blue, green);
+    background-size: cover;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+
+}
+p{
+    color: white;
+}
+h2
+{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 1%;
+    left: 1%;
+    width: 250px;
+    height: 100px;
+    background-image: 
+    linear-gradient(45deg, blue, green);
+    background-size: cover;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.loader
+{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top:75%;
+    left: 45%;
+    height: 6em;
+    width: 6em;
+}
+.loader .face
+{
+    position: absolute;
+    border-style: solid;
+    border-radius: 50%;
+    animation: animate 3s linear infinite;
+
+}
+.loader .face:nth-child(1)
+{
+    height: 100%;
+    width:100%;
+    color:red;
+    border-color: currentColor transparent transparent currentColor;
+    border-width: 0.2em 0.2em 0 0;
+    --deg:-45deg;
+    animation-direction: normal;
+
+}
+.loader .face:nth-child(2)
+{
+    height: 70%;
+    width: 70%;
+    color:magenta;
+    border-color: currentColor currentColor transparent transparent;
+    border-width: 0.2em  0 0 0.2em;
+    --deg:-135deg;
+    animation-direction: reverse;
+
+}
+
+.face .circle
+{
+    position: absolute;
+    width: 50%;
+    height: 0.1em;
+    top: 50%;
+    left:50%;
+    background-color: transparent;
+    transform: rotate(var(--deg));
+    transform-origin: left;
+}
+.loader .face .circle::before
+{
+    content: "";
+    position: absolute;
+    top: -0.5em;
+    right: -0.5em;
+    width: 1em;
+    height: 1em;
+    background-color: currentColor;
+    border-radius: 50%;
+    box-shadow: 0 0 2em;
+                0 0 4em;
+                0 0 6em;
+                0 0 8em;
+                0 0 10em;
+                0 0 0.5em rgba(255, 255, 0, 0.1);
+}
+
+@keyframes animate
+ {
+    to 
+    {
+        transform: rotate(1turn)
+    }
+        
+    
+}
